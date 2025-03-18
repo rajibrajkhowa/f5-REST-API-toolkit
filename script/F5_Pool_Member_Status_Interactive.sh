@@ -7,7 +7,7 @@ read -s F5_PASS
 read -p "Please enter the F5 LB FQDN? " F5_HOST
 read -p "Please enter the F5 Node Pool name? " POOL
 
-# Function to get the status of given pool
+# Function to get the status of given pool member
 get_pool_member_status() {
     curl -sk -u $F5_USER:$F5_PASS \
     -H "Content-Type: application/json" \
