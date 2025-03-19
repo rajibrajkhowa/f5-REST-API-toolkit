@@ -5,7 +5,7 @@ read -p "Please enter the user ID? " F5_USER
 echo  "Please enter the password? " 
 read -s F5_PASS
 read -p "Please enter the F5 LB FQDN? " F5_HOST
-read -p "Please enter the F5 Virtual Server? " VIRTUAL_SERVER
+read -p "Please enter the F5 Virtual Server name? " VIRTUAL_SERVER
 
 
 # Function to get the status of a virtual server
