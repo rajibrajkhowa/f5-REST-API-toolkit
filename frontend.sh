@@ -99,7 +99,7 @@ echo
 
 case "$OPTION" in
 (0)   exit_tool;;
-(1)   vip_details
+(1)   vip_details;;
 (2)   vip_status;;
 (3)   vs_status;;
 (4)   pool_status;;
