@@ -1,3 +1,21 @@
+#! /bin/bash
+
+
+if [[ -f "cred.txt" ]];
+
+then
+  source cred.txt
+else
+   touch cred.txt
+   USER=$(echo $HOME | sed -e 's\/home/\\g')
+   echo "export F5_USER="$USER"">> cred.txt
+   echo  "Enter your TACACS password"
+   read -s PASS
+   echo "export F5_PASS="$PASS"" >> cred.txt
+   source cred.txt
+fi
+
+
 
 exit_tool()
 
@@ -7,13 +25,13 @@ if [ -f "final_output.txt" ];
 
 then
    rm final_output.txt
+   rm cred.txt
    exit
 else
    exit
 fi
 
 }
-
 
 vip_details()
 
@@ -83,6 +101,8 @@ echo
 echo "
 Which tool you want to use today for analysis ?
 
+TIP: If you don't know the VIP, Node Pool and Virtual Server naming format in LB choose option-1 to extract the relevant details first before choosing other options
+
 Choose 0 to exit the tool
 Choose 1 to get VIP details (Virtual Server & Node Pool) mapped to a VIP
 Choose 2 to check status of a given VIP or Virtual Address
@@ -104,7 +124,7 @@ case "$OPTION" in
 (3)   vs_status;;
 (4)   pool_status;;
 (5)   pool_member_status;;
-(6)   vs_cert_binding
+(6)   vs_cert_binding;;
 esac
 echo
 echo "#############################################"
