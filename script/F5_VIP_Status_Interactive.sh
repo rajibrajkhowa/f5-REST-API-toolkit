@@ -1,9 +1,6 @@
 #!/bin/bash
 
 # Variables
-read -p "Please enter the user ID? " F5_USER
-echo "Please enter your password: "
-read -s F5_PASS
 read -p "Please enter the F5 LB FQDN? " F5_HOST
 read -p "Please enter the F5 VIP? " VIRTUAL_ADDRESS
 
